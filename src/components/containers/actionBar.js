@@ -58,7 +58,7 @@ class ActionBar extends Component {
                         <button className="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Filter Events
                         </button>
-                        <div className="dropdown-menu dropdown-menu-right" style={{zIndex:'1001'}}>
+                        <div className="dropdown-menu dropdown-menu-right" style={{ zIndex: '1001' }}>
                             <h6 className={(this.state.filter === 'all') ? "dropdown-header" : "dropdown-item"} onClick={(e) => { this._filter('all') }}>Display All</h6>
                             <h6 className={(this.state.filter === 'free') ? "dropdown-header" : "dropdown-item"} onClick={(e) => { this._filter('free') }}>Free Events</h6>
                             <h6 className={(this.state.filter === 'discounted') ? "dropdown-header" : "dropdown-item"} onClick={(e) => { this._filter('discounted') }}>Discounted Events</h6>
@@ -162,7 +162,6 @@ class ActionBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         events: state.eventsReducer
     }

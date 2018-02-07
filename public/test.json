@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Event 1",
+        "date": "2018-05-06",
+        "venue": "Delhi",
+        "price": "0",
+        "description": "Lorem ipsum dolor sit amet, urna non odio, non suscipit in taciti est, sem nullam, ante mi at massa nulla dictum.",
+        "discount": "100",
+        "image":"https://s3-ap-southeast-1.amazonaws.com/townscript/images/mobile-cover-uploaded/5dcdbf7f-e2b2-46c3-b086-636b9bab5992.jpeg"
+    },
+    {
+        "title": "Event 2",
+        "venue": "Mysore",
+        "date": "2018-04-05",
+        "price": "120",
+        "description": "Lorem ipsum dolor sit amet, urna non odio, non suscipit in tait.",
+        "discount": "0",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Glow_in_the_Archaeo-Dark_Event.jpg/1024px-Glow_in_the_Archaeo-Dark_Event.jpg"
+    },
+    {
+        "title": "Event Name 3",
+        "venue": "Pune",
+        "date": "2018-03-12",
+        "price": "250",
+        "description": "Lorem ipsum dolor sit amet, urna non odio, non suscipit in taciti est, sem nullam, ante mi at massa nulla dictum.",
+        "discount": "20",
+        "image":"http://www.revelryeventdesigners.com/wp-content/uploads/2011/05/revelry-event-designers-homepage-slideshow-38.jpeg"
+    },
+    {
+        "title": "Exclusive Event",
+        "venue": "Kolkata",
+        "date": "2018-02-20",
+        "price": "0",
+        "description": "Lorem ipsum dolor sit amet, urna non odio, non suscipit in tait.",
+        "discount": "0",
+        "image":"https://static.domain.com.au/twr/production/uploads/2017/09/26201754/small-LRT_9202.jpg"
+    }
+]

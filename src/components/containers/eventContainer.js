@@ -8,7 +8,6 @@ import { ErrorMsg } from './../presenters/errorMsg'
 
 class EventContainer extends Component {
     render() {
-        console.log(this.props.events)
         return (
             <div className="row" style={{ width: '100%', margin: '0px' }}>
                 {(Object.keys(this.props.events).length) ?

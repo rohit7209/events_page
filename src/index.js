@@ -4,6 +4,11 @@ import { Provider } from 'react-redux';
 import App from './app';
 import { store } from './store'
 
+//console.log(window.localStorage.getItem('eventList'))
+
+
+store.dispatch({type:'EVENTS_FETCH_REQUESTED', payload:'rohit sharma'})
+
 //store.dispatch({ type: 'REMOVE_ALL', payload: '' })
 
 //store.dispatch({ type: 'FILTER', payload: 'free' })

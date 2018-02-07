@@ -6,7 +6,6 @@ function filter(state, condition) {
         if (condition(event))
             newState[key] = { ...event }
     })
-    console.log(state)
     return newState;
 }
 
@@ -14,25 +13,34 @@ function updateState(state) {
     window.localStorage.setItem('eventList', JSON.stringify(state))
 }
 
+function addEventToLocal(event, id) {
+    let json = JSON.parse(window.localStorage.getItem('eventList'))
+    json[id] = event
+    window.localStorage.setItem('eventList', JSON.stringify(json))
+}
+
+function updateEvents(data) {
+    let newState = JSON.parse(window.localStorage.getItem('eventList'))
+    data.map((event) => {
+        newState[parseInt(Object.keys(newState).pop() || 0) + 1] = event
+    })
+    return newState;
+}
+
 function eventsReducer(state = JSON.parse(window.localStorage.getItem('eventList')) || {}, action) {
     switch (action.type) {
         case 'ADD':
-            console.log(action.payload)
-            state = { ...state, [parseInt(Object.keys(state).pop() || 0) + 1]: action.payload }
-            updateState(state)
-            break;
-        case 'DELETE':
-            state = { ...state }
-            delete state[action.payload]
-            updateState(state)
+            let id = parseInt(Object.keys(state).pop() || 0) + 1
+            state = { ...state, [id]: action.payload }
+            addEventToLocal(action.payload, id)
             break;
         case 'REMOVE_ALL':
             state = {}
             updateState(state)
             break;
-        case 'FILTER':
-            state = JSON.parse(window.localStorage.getItem('eventList'))
-            switch (action.payload) {
+        case 'FILTER_EVENTS':
+            state = updateEvents(action.payload.data)
+            switch (action.payload.filter) {
                 case 'free':
                     return filter(state, (event) => { return (event.price == 0) ? true : false })
                 case 'discounted':
@@ -40,6 +48,9 @@ function eventsReducer(state = JSON.parse(window.localStorage.getItem('eventList
                 case 'non-discounted':
                     return filter(state, (event) => { return (event.discount == 0) ? true : false })
             }
+            break;
+        case 'EVENTS_FETCH_SUCCEEDED':
+            state = updateEvents(action.payload)
             break;
     }
     //window.localStorage.setItem('eventList', JSON.stringify({}))
