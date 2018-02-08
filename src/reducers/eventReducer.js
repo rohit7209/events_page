@@ -14,7 +14,7 @@ function updateState(state) {
 }
 
 function addEventToLocal(event, id) {
-    let json = JSON.parse(window.localStorage.getItem('eventList'))
+    let json = JSON.parse(window.localStorage.getItem('eventList') || "{}")
     json[id] = event
     window.localStorage.setItem('eventList', JSON.stringify(json))
 }
